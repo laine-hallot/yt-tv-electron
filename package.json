@@ -7,12 +7,17 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "build:linux": "npx @electron/packager ./ 'Electron YT TV' --platform=linux --arch=x64 --out ./out/",
+    "build:mac-arm": "npx @electron/packager ./ 'Electron YT TV' --platform=darwin --arch=arm64 --out ./out/",
+    "build:mac-intel": "npx @electron/packager ./ 'Electron YT TV' --platform=darwin --arch=x64 --out ./out/",
+    "build:windows": "npx @electron/packager ./ 'Electron YT TV' --platform=win32 --arch=x64 --out ./out/"
   },
   "author": "Laine Hallot",
   "license": "MIT",
   "description": "Use the TV youtube UI",
   "devDependencies": {
+    "@electron/packager": "^18.3.6",
     "electron": "^33.2.0",
     "typescript": "^5.6.3"
   },
