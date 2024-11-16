@@ -1,0 +1,3 @@
+[submodule "gamepad-to-keyboard-mapper"]
+	path = gamepad-to-keyboard-mapper
+	url = git@github.com:jamesgrams/gamepad-to-keyboard-mapper.git
