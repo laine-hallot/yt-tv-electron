@@ -44,9 +44,10 @@ app
       }
     );
 
-    const extension = await session.defaultSession.loadExtension(
+    /* const extension = await session.defaultSession.loadExtension(
       resolve(cwd(), './gamepad-to-keyboard-mapper')
     );
+    console.log(extension); */
 
     ipcMain.handle('load-config', () => {
       return { controllerMap: [] };
@@ -88,11 +89,10 @@ app
       }
     });
 
-    console.log(extension);
     await win.loadURL('https://youtube.com/tv', { userAgent: USER_AGENT });
-    /* await win.loadFile(extension.path + "/popup.html", {
+    await win.loadFile(extension.path + '/popup.html', {
       userAgent: USER_AGENT,
-    }); */
+    });
     /* await win.loadURL('http://localhost:3000/', {
       userAgent: USER_AGENT,
     });

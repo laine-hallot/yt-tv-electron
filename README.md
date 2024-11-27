@@ -2,5 +2,5 @@
 
 ## Feature road map
 
-- [] Support controller navigation
-- [] Github actions to build releases
+- [ ] Support controller navigation
+- [ ] Github actions to build releases
