@@ -1,0 +1,14 @@
+[Desktop Entry]
+# The type as listed above
+Type=Application
+# The version of the desktop entry specification to which this file complies
+Version=1.5
+
+Name=YT Electron
+Comment=An electron app that lets you use the HTPC youtube UI
+Categories=AudioVideo;Video;TV;
+
+# if your Path value starts with a ~ then the install.sh script didn't work
+Path=~/.local/share/electron-yt-tv-linux-x64
+Exec=electron-yt-tv
+Terminal=false
