@@ -11,6 +11,7 @@ const createWindow = () => {
   const win = new BrowserWindow({
     autoHideMenuBar: true,
     webPreferences: {
+      webviewTag: true,
       devTools: true,
       preload: resolve(cwd(), './preload.js'),
     },
@@ -94,7 +95,9 @@ app
       }
     });
 
-    await win.loadURL('https://youtube.com/tv', { userAgent: USER_AGENT });
+    await win.loadFile('./index.html', {
+      userAgent: USER_AGENT,
+    });
     /* await win.loadURL('http://localhost:3000/', {
       userAgent: USER_AGENT,
     });

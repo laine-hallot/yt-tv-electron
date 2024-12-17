@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electron YT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="relative w-screen h-screen">
+      <webview
+        id="youtube-webview"
+        class="h-full w-full"
+        src="https://www.youtube.com/tv/"
+        plugins
+        useragent="Mozilla/5.0 (PlayStation; PlayStation 5/6.50) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Safari/605.1.15"
+      ></webview>
+      <div class="absolute z-10 h-full w-full bg-transparent top-0"></div>
+    </div>
+    <script>
+      onload = () => {
+        const webview = document.querySelector('webview');
+        const indicator = document.querySelector('.indicator');
+
+        const loadstart = () => {
+          indicator.innerText = 'loading...';
+        };
+
+        const loadstop = () => {
+          indicator.innerText = '';
+        };
+
+        webview.addEventListener('did-start-loading', loadstart);
+        webview.addEventListener('did-stop-loading', loadstop);
+      };
+    </script>
+  </body>
+</html>
